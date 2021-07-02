@@ -1,4 +1,4 @@
-package com.anywebsite;
+package anyWebsite;
 
 public class logout_Test {
 
