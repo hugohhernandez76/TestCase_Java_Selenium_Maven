@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class contact_Test extends Browser{
-    @Test(priority = 1)
+    @Test(priority = 5)
     void ContactDetails(){
 
         driver.findElement(By.linkText("Contact")).click();

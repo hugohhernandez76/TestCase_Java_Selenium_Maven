@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class Browser {
 
     public WebDriver driver;
+    String userID = "Onetest";
+    String passWord = "123456";
 
     @BeforeSuite
     public void setUp(){
