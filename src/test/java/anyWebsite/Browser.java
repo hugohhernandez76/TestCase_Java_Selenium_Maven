@@ -21,7 +21,7 @@ public class Browser {
             //Maximize window
             driver.manage().window().maximize();
             //Placed an implicit wait of 10 seconds to manage alerts
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     @AfterSuite
     public void tearDown(){

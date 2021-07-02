@@ -3,22 +3,23 @@ package anyWebsite;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+import static org.testng.Assert.assertTrue;
 
-class home_Test extends Browser{
-
-         //Run test to validate Title of the site is the same as the one expected.
-    void WebsiteTitle(){
-        String title = driver.getTitle();
-        Assert.assertEquals("STORE", driver.getTitle());
+public class home_Test extends Browser {
+    @Test
+        //Run test to validate Title of the site is the same as the one expected.
+    void WebsiteTitle() {
+        String ActualTitle = driver.getTitle();
+        String ExpectedTitle = "STORE";
+        Assert.assertEquals(ExpectedTitle, ActualTitle);
     }
-         //Validate Categories exist and all the options
-    void categoriesOptions(){
+
+    @Test
+        //Validate Categories exist and all the options
+    void categoriesOptions() {
         String categories = driver.findElement(By.linkText("CATEGORIES")).getText();
         Assert.assertEquals(categories, "CATEGORIES", "Menu is not displayed");
 
@@ -33,42 +34,31 @@ class home_Test extends Browser{
 
     }
 
-    void LogoValidate(){
-
-        driver.findElement(By.xpath("//a[@id='nava']")).click();
-
-    }
-
+    @Test
     void signUp(){
-
         driver.findElement(By.cssSelector("#signin2")).click();
-        driver.findElement(By.xpath("//input[@id='sign-username']")).sendKeys("OneTest");
+        driver.findElement(By.xpath("//input[@id='sign-username']")).sendKeys("OneTest2");
         driver.findElement(By.xpath("//input[@id='sign-password']")).sendKeys("123456");
         driver.findElement(By.xpath("//button[contains(text(),'Sign up')]")).click();
 
-        //Handle Simple Alert
-        Alert simpleAlert = driver.switchTo().alert();
-        simpleAlert.accept();
+
 
     }
-
+    @Test
     void ValidateUserLoggedin (){
-        String nameOfUser = driver.findElement(By.xpath("//a[@id='nameofuser']")).getText();
-        Assert.assertEquals("Welcome vhernandez", nameOfUser);
+        String expectedUser = "OneTest2";
+        String nameOfUser = driver.findElement(By.xpath("//a[normalize-space(text() ) = 'Welcome OneTest2']")).getText();
+        Assert.assertEquals(expectedUser, nameOfUser);
 
 
 
     }
-
+    @Test
     void LogoutUser(){
-
-        driver.findElement(By.className("#logout2")).click();
+        driver.findElement(By.linkText("Log out")).click();
 
     }
 
-    void ExitBrowser(){
-        driver.close();
-    }
 
 }
 
