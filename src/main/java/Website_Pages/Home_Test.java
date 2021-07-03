@@ -1,15 +1,15 @@
-package anyWebsite;
+package Website_Pages;
 
 
-import org.openqa.selenium.Alert;
+import Website_Pages.Browser;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class home_Test extends Browser {
-    @Test(priority = 1)
+public class Home_Test extends Browser {
+
         //Run test to validate Title of the site is the same as the one expected.
     void WebsiteTitle() {
         String ActualTitle = driver.getTitle();
@@ -17,7 +17,7 @@ public class home_Test extends Browser {
         Assert.assertEquals(ExpectedTitle, ActualTitle);
     }
 
-    @Test(priority = 2)
+
         //Validate Categories exist and all the options
     void categoriesOptions() {
         String categories = driver.findElement(By.linkText("CATEGORIES")).getText();
@@ -34,7 +34,7 @@ public class home_Test extends Browser {
 
     }
 
-    @Test(priority = 3)
+
     void signUp(){
         driver.findElement(By.cssSelector("#signin2")).click();
         driver.findElement(By.xpath("//input[@id='sign-username']")).sendKeys(userID);
@@ -44,7 +44,7 @@ public class home_Test extends Browser {
 
 
     }
-    @Test(priority = 4)
+
     void ValidateUserLoggedin (){
         String expectedUser = "OneTest";
         String nameOfUser = driver.findElement(By.xpath("//a[normalize-space(text() ) = 'Welcome OneTest']")).getText();

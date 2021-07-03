@@ -1,13 +1,12 @@
-package anyWebsite;
+package Website_Pages;
 
+import Website_Pages.Browser;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+public class Contact_Page extends Browser {
 
-public class contact_Test extends Browser{
-    @Test(priority = 5)
     void ContactDetails(){
 
         driver.findElement(By.linkText("Contact")).click();

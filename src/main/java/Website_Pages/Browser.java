@@ -1,15 +1,13 @@
-package anyWebsite;
+package Website_Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import java.util.concurrent.TimeUnit;
-
 public class Browser {
 
-    public WebDriver driver;
+    public static WebDriver driver;
     String userID = "Onetest";
     String passWord = "123456";
 
@@ -22,8 +20,7 @@ public class Browser {
             driver.get("https://www.demoblaze.com/");
             //Maximize window
             driver.manage().window().maximize();
-            //Placed an implicit wait of 10 seconds to manage alerts
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
     @AfterSuite
     public void tearDown(){

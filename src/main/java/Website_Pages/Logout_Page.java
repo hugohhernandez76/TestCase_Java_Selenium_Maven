@@ -1,12 +1,13 @@
-package anyWebsite;
+package Website_Pages;
 
+import Website_Pages.Browser;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class logout_Test extends Browser{
+public class Logout_Page extends Browser {
 
 
-        @Test(priority = 7)
+
         void LogoutUser(){
             driver.findElement(By.xpath("//a[@id='logout2']")).click();
 

@@ -1,11 +1,12 @@
-package anyWebsite;
+package Website_Pages;
 
+import Website_Pages.Browser;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class cart_Test extends Browser{
-    @Test
+public class Cart_Page extends Browser {
+
     void Place_An_Order(){
         //Adding a Phone to the Cart
         driver.findElement(By.xpath("//a[contains(text(),'Samsung galaxy s6')]")).click();
