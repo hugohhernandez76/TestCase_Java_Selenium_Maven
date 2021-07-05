@@ -9,13 +9,12 @@ public class Contact_Page extends Browser {
 
     void ContactDetails(){
 
-        driver.findElement(By.linkText("Contact")).click();
-        driver.findElement(By.xpath("//input[@id='recipient-name']")).sendKeys("Hugo Hernandez");
-        driver.findElement(By.xpath("//textarea[@id='message-text']")).sendKeys("Demo Test");
-        driver.findElement(By.xpath("//button[contains(text(),'Send message')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(),'Contact')]")).click();
+        driver.findElement(By.xpath("//input[@id='recipient-email']")).sendKeys("yourmail@mymail.com");
+        driver.findElement(By.xpath("//input[@id='recipient-name']")).sendKeys("My Name");
+        driver.findElement(By.xpath("//textarea[@id='message-text']")).sendKeys("This is to fill out your details.");
+        driver.findElement(By.xpath("//textarea[@id='message-text']")).click();
 
-        Alert simpleAlert = driver.switchTo().alert();
-        simpleAlert.accept();
 
     }
 
