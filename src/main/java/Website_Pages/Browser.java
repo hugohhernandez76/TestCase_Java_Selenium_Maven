@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.concurrent.TimeUnit;
+
 public abstract class Browser {
 
     public static WebDriver driver;
@@ -27,6 +29,7 @@ public abstract class Browser {
         driver.get("https://www.demoblaze.com/");
         //Maximize window
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         return driver;
 
