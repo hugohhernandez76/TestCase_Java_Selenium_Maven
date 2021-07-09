@@ -13,7 +13,8 @@ public class Cart_Page extends Browser {
 
     public  String addLaptopToCart() {    //Adding a Laptop to the Cart
         WebDriverWait wait = new WebDriverWait(driver,5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Laptops')]"))).click();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'Laptops')]"))).click();
         //driver.findElement(By.xpath("//a[contains(text(),'Laptops')]")).click(); // Click on Laptops button from main page
         driver.findElement(By.xpath("//a[normalize-space()='MacBook Pro']")).click(); //Selects laptop from menu
         driver.findElement(By.xpath("//a[normalize-space()='Add to cart']")).click(); //Adds to the cart
