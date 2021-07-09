@@ -13,11 +13,11 @@ public abstract class Browser {
     public static WebDriver driver;
     String userID = "Onetest";
     String passWord = "123456";
-    By categories = By.xpath("//a[@id='cat']");
-    By phoneslink = By.xpath("//a[contains(text(),'Phones')]");
-    By laptopslink = By.xpath("//a[contains(text(),'Laptops')]");
-    By monitorslink = By.xpath("//a[contains(text(),'Monitors')]");
-    By usrloggedin = By.xpath("//a[@id='nameofuser']");
+    By categories = By.xpath("//a[normalize-space()='CATEGORIES']");
+    By phoneslink = By.xpath("//a[normalize-space()='Phones']");
+    By laptopslink = By.xpath("//a[normalize-space()='Laptops']");
+    By monitorslink = By.xpath("//a[normalize-space()='Monitors']");
+    By usrloggedin = By.xpath("//a[normalize-space()='Welcome OneTest']");
 
     @BeforeSuite
 
@@ -35,12 +35,11 @@ public abstract class Browser {
 
     }
 
-    public  void signUp(){
-        driver.findElement(By.cssSelector("#signin2")).click();
-        driver.findElement(By.xpath("//input[@id='sign-username']")).sendKeys(userID);
-        driver.findElement(By.xpath("//input[@id='sign-password']")).sendKeys(passWord);
-        driver.findElement(By.xpath("//button[contains(text(),'Sign up')]")).click();
 
+
+    public String returnToHomePage(){
+        driver.findElement(By.xpath("//*[@id='navbarExample']/ul/li[1]/a")).click();
+        return null;
     }
     @AfterSuite
     public static void tearDown(){

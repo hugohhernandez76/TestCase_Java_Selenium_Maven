@@ -1,6 +1,7 @@
 package Website_Pages;
 
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,28 +17,36 @@ public class Home_Page extends Browser {
 
     }
 
+    public String signUp(){
+        driver.findElement(By.xpath("//a[normalize-space()='Log in']")).click();
+        driver.findElement(By.xpath("//input[@id='loginusername']")).sendKeys(userID);
+        driver.findElement(By.xpath("//input[@id='loginpassword']")).sendKeys(passWord);
+        driver.findElement(By.xpath("//button[normalize-space()='Log in']")).click();
+//        Alert simpleAlert = driver.switchTo().alert();
+//        simpleAlert.accept();
+        //driver.findElement(By.xpath("//div[@id='signInModal']//span[@aria-hidden='true'][normalize-space()='×']"));
+        return null;
+    }
+
         //Validate Categories exist and all the options
     public String getCategories() {
+
         return driver.findElement(categories).getText();
     }
     public String getPhonesLink(){
+
         return driver.findElement(phoneslink).getText();
     }
     public String getLaptopsLink(){
+
         return driver.findElement(laptopslink).getText();
     }
     public String getMonitorsLink(){
         return driver.findElement(monitorslink).getText();
     }
 
-
-    public String  ValidateUserLoggedin (){
-
+    public String  ValidateUserLoggedin(){
         return driver.findElement(usrloggedin).getText();
-
-
-
-
     }
 
 
