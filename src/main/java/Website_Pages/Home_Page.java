@@ -22,9 +22,7 @@ public class Home_Page extends Browser {
         driver.findElement(By.xpath("//input[@id='loginusername']")).sendKeys(userID);
         driver.findElement(By.xpath("//input[@id='loginpassword']")).sendKeys(passWord);
         driver.findElement(By.xpath("//button[normalize-space()='Log in']")).click();
-//        Alert simpleAlert = driver.switchTo().alert();
-//        simpleAlert.accept();
-        //driver.findElement(By.xpath("//div[@id='signInModal']//span[@aria-hidden='true'][normalize-space()='×']"));
+
         return null;
     }
 

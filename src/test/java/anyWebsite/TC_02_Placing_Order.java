@@ -19,7 +19,7 @@ public class TC_02_Placing_Order extends Cart_Page {
    @Test
    public void LaptopAddToCart() {
 
-      String LaptoptoCart = cartPage.addLaptopToCart();
+      cartPage.addLaptopToCart();
    }
 
 //   @Test
